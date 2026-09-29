@@ -1,4 +1,6 @@
 #include <iostream>
+#include "mathfuncs.h"
+
 using namespace std;
 
 int main() {
@@ -16,26 +18,26 @@ int main() {
 
     switch (op) {
         case '+':
-            cout << "Result: " << a + b << endl;
+            cout << add(a, b) << endl;
             break;
 
         case '-':
-            cout << "Result: " << a - b << endl;
+            cout << subtract(a, b) << endl;
             break;
 
         case '*':
-            cout << "Result: " << a * b << endl;
+            cout << multiply(a, b) << endl;
             break;
 
         case '/':
             if (b != 0)
-                cout << "Result: " << a / b << endl;
+                cout << divide(a, b) << endl;
             else
-                cout << "Error: Cannot divide by zero!" << endl;
+                cout << "Cannot divide by zero" << endl;
             break;
 
         default:
-            cout << "Invalid operator!" << endl;
+            cout << "Invalid operator" << endl;
     }
 
     return 0;
