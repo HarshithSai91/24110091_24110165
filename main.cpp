@@ -1,44 +1,26 @@
 #include <iostream>
-#include "mathfuncs.h"
+#include <cstdlib>
+#include <ctime>
+#include "randomfuncs.h"
 
 using namespace std;
 
 int main() {
-    double a, b;
-    char op;
+    srand(time(0));
 
-    cout << "Enter first number: ";
-    cin >> a;
+    cout << "Random Functions Demo" << endl;
 
-    cout << "Enter operator (+, -, *, /): ";
-    cin >> op;
+    // Flip a coin
+    if (flipCoin() == 0)
+        cout << "Coin flip: Tails" << endl;
+    else
+        cout << "Coin flip: Heads" << endl;
 
-    cout << "Enter second number: ";
-    cin >> b;
+    // Roll a 6-sided die
+    cout << "6-sided die: " << rollSixSidedDie() << endl;
 
-    switch (op) {
-        case '+':
-            cout << add(a, b) << endl;
-            break;
-
-        case '-':
-            cout << subtract(a, b) << endl;
-            break;
-
-        case '*':
-            cout << multiply(a, b) << endl;
-            break;
-
-        case '/':
-            if (b != 0)
-                cout << divide(a, b) << endl;
-            else
-                cout << "Cannot divide by zero" << endl;
-            break;
-
-        default:
-            cout << "Invalid operator" << endl;
-    }
+    // Roll a 10-sided die
+    cout << "10-sided die: " << rollTenSidedDie() << endl;
 
     return 0;
 }
