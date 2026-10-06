@@ -1,5 +1,5 @@
 #include <cstdlib>
-#include "randomfuncs.h"
+#include "randfuncs.h"
 
 int flipCoin() {
     return rand() % 2;
